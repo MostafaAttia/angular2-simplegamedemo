@@ -1,0 +1,31 @@
+
+<div class="row">
+    <div class="col-sm-offset-3 col-sm-6">
+
+        <div class="panel panel-default game-panel">
+            <input #nameInput [@puzzleState]="puzzle.state" (focus)="puzzle.toggleState()" (blur)="puzzle.toggleState()" (keyup)="0" class="form-control inputs-placeholder" type="text" id="name" [placeholder]="puzzle.placeholder">
+            <div [class.hidden]="nameInput.value === '' " >
+                <h3>
+                    Hello <span class="text-uppercase"><strong>{{nameInput.value}}</strong></span>, I want to play a game! 
+                </h3>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-offset-3 col-sm-6">
+
+                <div class="panel panel-default inputs-panel"
+                    [class.solved]="(switch1.value == switch1Value && switch2.value == switch2Value && switch3.value == switch3Value && switch4.value == switch4Value)" >
+                    <input #switch1 (keyup)="0" type="text" placeholder="enter 1 or 0" class="form-control inputs-placeholder"> <br>
+                    <input #switch2 (keyup)="0" type="text" placeholder="enter 1 or 0" class="form-control inputs-placeholder"> <br>
+                    <input #switch3 (keyup)="0" type="text" placeholder="enter 1 or 0" class="form-control inputs-placeholder"> <br>
+                    <input #switch4 (keyup)="0" type="text" placeholder="enter 1 or 0" class="form-control inputs-placeholder"> <br>
+                </div>
+                
+                
+            </div>
+        </div>
+
+    </div>
+</div>
